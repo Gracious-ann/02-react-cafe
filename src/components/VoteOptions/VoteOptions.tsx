@@ -29,14 +29,17 @@ function VoteOptions({ onVote, onReset, canReset }: VoteOptionsProps) {
       >
         Bad
       </button>
-      <button
-        className={clsx(css.button, css.reset, !canReset && css.hidden)}
-        onClick={onReset}
-      >
-        Reset
-      </button>
+      {canReset && (
+        <button
+          className={clsx(css.button, css.reset)}
+          onClick={onReset}
+        >
+          Reset
+        </button>
+      )}
     </div>
   );
 }
 
 export default VoteOptions;
+// !canReset && css.hidden;
